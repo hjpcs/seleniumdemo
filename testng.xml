@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="selenium-demo">
+    <test name="搜索测试">
+        <classes>
+            <class name="testcase.BaiduSearch" />
+            <class name="testcase.SogouSearch" />
+        </classes>
+    </test>
+</suite>

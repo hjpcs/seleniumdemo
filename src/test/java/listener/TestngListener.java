@@ -10,6 +10,7 @@ import testcase.BaseTest;
 
 public class TestngListener extends TestListenerAdapter {
 
+    //重写onTestFailure方法
     public void onTestFailure(ITestResult iTestResult){
         super.onTestFailure(iTestResult);
         BaseTest baseTest = (BaseTest) iTestResult.getInstance();

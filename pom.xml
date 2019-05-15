@@ -50,15 +50,18 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.20</version>
                 <configuration>
+                    <!-- testng配置文件 -->
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <!-- 将命名不规范的测试用例.java文件包含 -->
                     <includes>
                         <include>**/**.java</include>
                     </includes>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
+                    <!-- 设置allure-results文件夹生成在target目录下 -->
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>

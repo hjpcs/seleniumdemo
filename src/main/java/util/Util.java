@@ -14,22 +14,23 @@ public class Util {
 
     public static WebDriver driver;
 
+    //获取driver
     public WebDriver getDriver(){
         return driver;
     }
 
-    //打开浏览器
+    //打开浏览器，使用headless模式
     public void open(String url){
-        //使用headless模式
-        System.setProperty("webdriver.chrome.driver", "/opt/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/opt/chromedriver"); //linux系统下需要配置driver路径
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
-        options.addArguments("--no-sandbox");
+        options.addArguments("--no-sandbox"); //这一句在linux系统下非常重要
         driver = new ChromeDriver(options);
         //driver = new ChromeDriver();
         driver.get(url);
     }
 
+    //打开浏览器，使用GUI模式
     public void openNormal(String url){
         driver = new ChromeDriver();
         driver.get(url);

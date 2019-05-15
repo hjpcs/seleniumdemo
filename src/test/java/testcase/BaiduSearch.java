@@ -8,8 +8,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
-@Epic("test step 1")
-@Feature("test step 2")
+@Epic("百度搜索")
+@Feature("输入关键词进行搜索")
 public class BaiduSearch extends BaseTest {
 
     /*

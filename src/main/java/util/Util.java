@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
@@ -20,10 +21,10 @@ public class Util {
     //打开浏览器
     public void open(String url){
         //使用headless模式
-        /*ChromeOptions options = new ChromeOptions();
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
-        driver = new ChromeDriver(options);*/
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
+        //driver = new ChromeDriver();
         driver.get(url);
     }
 

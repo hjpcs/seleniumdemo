@@ -24,6 +24,7 @@ public class Util {
         System.setProperty("webdriver.chrome.driver", "/opt/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
         driver = new ChromeDriver(options);
         //driver = new ChromeDriver();
         driver.get(url);

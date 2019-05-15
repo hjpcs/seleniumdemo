@@ -11,7 +11,4 @@ public class BasePage {
 
     Util util = new Util();
 
-    String baidu = "https://www.baidu.com/";
-    String google = "https://www.google.com/";
-    String sogou = "https://www.sogou.com/";
 }

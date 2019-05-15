@@ -5,11 +5,6 @@ public class SogouPage extends BasePage{
     String searchBar = "query";
     String searchButton = "stb";
 
-    //打开搜狗首页
-    public void open(){
-        util.open(sogou);
-    }
-
     //输入关键字
     public void input(String text){
         util.inputById(searchBar, text);

@@ -1,6 +1,5 @@
 package testcase;
 
-import base.BaseTest;
 import data.SogouSearchData;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -15,8 +14,7 @@ public class SogouSearch extends BaseTest {
      */
     @BeforeMethod
     public void before(){
-        sogouPage.open();
-        util.max();
+        super.initSogou();
     }
 
     @AfterMethod(alwaysRun = true)
@@ -25,7 +23,7 @@ public class SogouSearch extends BaseTest {
     }
 
     @Test(dataProvider = "searchData", dataProviderClass = SogouSearchData.class)
-    public void searchTest(String keyword, String expect){
+    public void sogouSearchTest(String keyword, String expect){
         sogouPage.input(keyword);
         sogouPage.search();
         try {

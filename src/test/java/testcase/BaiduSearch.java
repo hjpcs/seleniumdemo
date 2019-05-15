@@ -1,12 +1,15 @@
 package testcase;
 
-import base.BaseTest;
 import data.BaiduSearchData;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+
+@Epic("test step 1")
+@Feature("test step 2")
 public class BaiduSearch extends BaseTest {
 
     /*
@@ -15,8 +18,7 @@ public class BaiduSearch extends BaseTest {
      */
     @BeforeClass
     public void before(){
-        baiduPage.open();
-        util.max();
+        super.initBaidu();
     }
 
     @AfterClass(alwaysRun = true)
@@ -24,8 +26,11 @@ public class BaiduSearch extends BaseTest {
         util.quit();
     }
 
-    @Test(dataProvider = "searchData", dataProviderClass = BaiduSearchData.class)
-    public void searchTest(String keyword, String expect){
+    @Test(dataProvider = "searchData", dataProviderClass = BaiduSearchData.class, priority = 0, description = "百度搜索测试")
+    @Description("使用dataProvider进行数据驱动")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("获取页面title进行断言")
+    public void baiduSearchTest(String keyword, String expect){
         baiduPage.input(keyword);
         baiduPage.search();
         try {

@@ -21,7 +21,7 @@ public class Util {
     //打开浏览器
     public void open(String url){
         //使用headless模式
-        System.setProperty("webdriver.chrome.driver", "/root/webdriver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/opt/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
